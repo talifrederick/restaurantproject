@@ -6,9 +6,6 @@ public class TakeOutOrder extends Order {
     public TakeOutOrder( String customer){
         super();
         this.customer = customer;
-
-        
-
         
     }
     public TakeOutOrder( String customer, ArrayList<Food> dishes){
@@ -21,6 +18,8 @@ public class TakeOutOrder extends Order {
     public void setCustomer(String customer) {
         this.customer = customer;
     }
+
+    //tostring todo
     
     public String[] getPossibleStatuses(){
         String[] s = {"placed", "Cooking","Waiting For Pickup","Delivered"};

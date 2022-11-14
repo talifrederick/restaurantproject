@@ -20,7 +20,6 @@ public class Order{
         this.orderNumber = totalOrders;
         dishes = new ArrayList<>();
         status = "placed";
-
     }
 
     public ArrayList<Food> getDishes() {
@@ -43,8 +42,17 @@ public class Order{
         return orderNumber == o.orderNumber;
     }
 
+    public double getTotal(){
+        return 0; //todo
+    }
+
+    public String toString(){
+        return "Order No:" +orderNumber+ " Status: "+status+ " Number of Dishes: "+ dishes.size()+ " total: "+getTotal()+" ";
+    }
+
     public String[] getStatus(){
-        String[] status = {"placed", "cooking", ""}
+        String[] g = {"placed", "cooking", "ready", "served"};
+        return g;
 
     }
 }
