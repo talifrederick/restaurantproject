@@ -51,9 +51,9 @@ public class restaurant {
                 System.out.println("You will be seated at table " + tableNumber);
                 System.out.println("What would you like on the menu:");
                 ArrayList<Food> dishes = getDishes();
-                TableOrder s = new TableOrder(customer, numOfGuests, tableNumber); 
-                s.setDishes(dishes);
-                orders.add(s);
+                TableOrder o = new TableOrder(customer, numOfGuests, tableNumber); 
+                o.setDishes(dishes);
+                orders.add(o);
 
 
 
@@ -78,19 +78,29 @@ public class restaurant {
                 System.out.print("Phone: ");
                 String phone = sc.nextLine();
                 ArrayList<Food> dishes = getDishes(); //function inside of restaurant
-                DeliveryOrder a = new DeliveryOrder(customer, addr, phone);
-                a.setDishes(dishes);
-                orders.add(a);
+                DeliveryOrder o = new DeliveryOrder(customer, addr, phone);
+                o.setDishes(dishes);
+                orders.add(o);
 
             }
 
             if(ans==4){
+                System.out.println("List by order number");
+                System.out.println("List by order type");
+                System.out.println("List by status");
+                System.out.println("select an option");
+                ans = sc.nextInt();
+                sc.nextLine();
+                listOrders(ans);
 
-                listOrders();
+                
+
+                
 
             }
 
             if(ans ==5){
+                
 
             }
 
@@ -142,7 +152,10 @@ public class restaurant {
 
     public static void listOrders(int n){
         if (n==1){ //print orders by order number
+            for(Order o: orders){
+                System.out.println(o);
 
+            }
         }
         if(n==2){
             HashSet<String> orderTypes = new HashSet<>();
@@ -160,7 +173,7 @@ public class restaurant {
 
         }
         if(n==3){//print orders by status
-
+            for(int i = 0; i)
         }
     }
     
