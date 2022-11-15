@@ -4,14 +4,12 @@ import java.util.Random;
 import java.util.HashSet;
 
 public class restaurant {
-    static Scanner sc = new Scanner(System.in);
+   
     static ArrayList<Food> menu = new ArrayList<Food>();
     static ArrayList<Food> dishes = new ArrayList<Food>();
     static ArrayList<Order> orders = new ArrayList<Order>();
-    //static ArrayList<TableOrder> tableOrders = new ArrayList<TableOrder>();
-
-    //TableOrder tableOrder;
-
+    private static Scanner sc = new Scanner(System.in);
+  
     
 
 
@@ -53,15 +51,22 @@ public class restaurant {
                 System.out.println("You will be seated at table " + tableNumber);
                 System.out.println("What would you like on the menu:");
                 ArrayList<Food> dishes = getDishes();
-                TableOrder o = new TableOrder(customer, numOfGuests, tableNumber); 
-                o.setDishes(dishes);
-                orders.add(o);
+                TableOrder s = new TableOrder(customer, numOfGuests, tableNumber); 
+                s.setDishes(dishes);
+                orders.add(s);
 
 
 
             }
 
             if(ans==2){
+                System.out.print("Customer name: ");
+                String customer = sc.nextLine();
+                ArrayList<Food> dishes = getDishes(); 
+                TakeOutOrder o = new TakeOutOrder(customer);
+                o.setDishes(dishes);
+                orders.add(o);
+
 
             }
 
@@ -73,13 +78,15 @@ public class restaurant {
                 System.out.print("Phone: ");
                 String phone = sc.nextLine();
                 ArrayList<Food> dishes = getDishes(); //function inside of restaurant
-                DeliveryOrder o = new DeliveryOrder(customer, addr, phone);
-                o.setDishes(dishes);
-                orders.add(o);
+                DeliveryOrder a = new DeliveryOrder(customer, addr, phone);
+                a.setDishes(dishes);
+                orders.add(a);
 
             }
 
             if(ans==4){
+
+                listOrders();
 
             }
 
