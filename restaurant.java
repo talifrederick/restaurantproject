@@ -109,13 +109,34 @@ public class restaurant {
                 ans = sc.nextInt();
                 sc.nextLine();
 
+                for(int i =0; i < orders.size(); i++){
+                    System.out.println(1 +" "+orders.get(i));
+                }
+                int orderNum = sc.nextInt();
+                sc.nextLine();
+
+                Order o = orders.get(orderNum);
+
                 if (ans==1){
+                    String[]  statuses = o.getPossibleStatuses();
+                    System.out.println(orders.get(orderNum));
+
+                    for(int i =0; i < statuses.length;i++){
+                        System.out.println(i+" "+statuses[i]);
+                    }
+                    int newStatus = sc.nextInt();
+                    sc.nextLine();
+                    o.setStatus(statuses[newStatus]);
+                
 
                 }
 
                 if(ans ==2){
                     ArrayList<ArrayList <Food>> dishes2 = new ArrayList<>();
                     ArrayList<Food> dishes = getDishes(); 
+                    for( Food dish: dishes){
+                        o.addDish(dish);
+                    }
                     System.out.println(dishes);
                     
                     dishes2.add(dishes);

@@ -50,9 +50,21 @@ public class Order{
         return "Order No:" +orderNumber+ " Status: "+status+ " Number of Dishes: "+ dishes.size()+ " total: "+getTotal()+" ";
     }
 
-    public String[] getStatus(){
+    public void addDish(Food f){
+        dishes.add(f);
+    }
+    
+    public String[] getPossibleStatuses(){
         String[] g = {"placed", "cooking", "ready", "served"};
         return g;
+    }
 
+    public String getStatus(){
+        
+        return status;
+
+    }
+    public void setStatus(String s){
+        status = s;
     }
 }
