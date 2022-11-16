@@ -54,6 +54,7 @@ public class restaurant {
                 TableOrder o = new TableOrder(customer, numOfGuests, tableNumber); 
                 o.setDishes(dishes);
                 orders.add(o);
+                
 
 
 
@@ -85,10 +86,10 @@ public class restaurant {
             }
 
             if(ans==4){
-                System.out.println("List by order number");
-                System.out.println("List by order type");
-                System.out.println("List by status");
-                System.out.println("select an option");
+                System.out.println("1. List by order number");
+                System.out.println("2. List by order type");
+                System.out.println("3. List by status");
+                System.out.println("4. select an option");
                 ans = sc.nextInt();
                 sc.nextLine();
                 listOrders(ans);
@@ -100,6 +101,28 @@ public class restaurant {
             }
 
             if(ans ==5){
+                System.out.println("1. Update status");
+                System.out.println("2. Add dish");
+                System.out.println("3. Remove dish");
+                System.out.println("4. Cancel order");
+                System.out.println("select an option");
+                ans = sc.nextInt();
+                sc.nextLine();
+
+                if (ans==1){
+
+                }
+
+                if(ans ==2){
+                    ArrayList<ArrayList <Food>> dishes2 = new ArrayList<>();
+                    ArrayList<Food> dishes = getDishes(); 
+                    System.out.println(dishes);
+                    
+                    dishes2.add(dishes);
+                    System.out.println(dishes2);
+
+                }
+
                 
 
             }
@@ -172,9 +195,9 @@ public class restaurant {
             }
 
         }
-        if(n==3){//print orders by status
-            for(int i = 0; i)
-        }
+        //if(n==3){//print orders by status
+            //for(int i = 0; i)
+        
     }
     
 }
