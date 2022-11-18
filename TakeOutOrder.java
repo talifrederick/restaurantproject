@@ -19,10 +19,12 @@ public class TakeOutOrder extends Order {
         this.customer = customer;
     }
 
-    //tostring todo
+    public String toString(){
+        return super.toString()+customer;
+    }
     
     public String[] getPossibleStatuses(){
-        String[] s = {"placed", "Cooking","Waiting For Pickup","Delivered"};
+        String[] s = {"placed", "Cooking","Waiting For Pickup","Delivered", "canceled"};
         return s;
     }   
 

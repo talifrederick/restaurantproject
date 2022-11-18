@@ -39,7 +39,7 @@ public class DeliveryOrder extends Order{
     }
     
     public String[] getPossibleStatuses(){
-        String[] s = {"placed", "Cooking","Waiting For Driver", "On the Way","Delivered"};
+        String[] s = {"placed", "Cooking","Waiting For Driver", "On the Way","Delivered", "canceled"};
         return s;
     }
 }

@@ -35,12 +35,14 @@ public class TableOrder extends Order {
         return tableNumber;
     }
 
-    //tostring todo
+    public String toString(){
+        return super.toString()+customer+ " "+ numOfGuests+ " "+tableNumber;
+    }
 
     
     
     public String[] getPossibleStatuses(){
-        String[] s = {"placed", "Cooking", "Served"};
+        String[] s = {"placed", "Cooking", "Served", "canceled"};
         return s;
     }
 

@@ -43,7 +43,12 @@ public class Order{
     }
 
     public double getTotal(){
-        return 0; //todo
+        double total = 0;
+        for(Food dish: dishes){
+            double price = dish.getPrice();
+            total+= price;
+        } 
+        return total;
     }
 
     public String toString(){
@@ -52,6 +57,10 @@ public class Order{
 
     public void addDish(Food f){
         dishes.add(f);
+    }
+
+    public void removeDish(Food f){
+        dishes.remove(f);
     }
     
     public String[] getPossibleStatuses(){
@@ -67,4 +76,6 @@ public class Order{
     public void setStatus(String s){
         status = s;
     }
+
+   
 }

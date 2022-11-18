@@ -20,14 +20,7 @@ public class restaurant {
 
         Random rand = new Random(); // creating instance of Random class
 
-        Food Hamburger = new Food("Hamburger", 10);
-        Food Ribeye = new Food("Ribeye Steak", 25);
-        Food Wings = new Food("6 count Wings", 11);
-        Food Quesadilla = new Food("Quesadillas", 12);
-        menu.add(Hamburger);
-        menu.add(Ribeye);
-        menu.add(Wings);
-        menu.add(Quesadilla);
+        makeMenu();
         int ans = -1;
         while(ans != 0){
             System.out.println("Options:");
@@ -110,7 +103,7 @@ public class restaurant {
                 sc.nextLine();
 
                 for(int i =0; i < orders.size(); i++){
-                    System.out.println(1 +" "+orders.get(i));
+                    System.out.println(i +" "+orders.get(i));
                 }
                 int orderNum = sc.nextInt();
                 sc.nextLine();
@@ -118,6 +111,7 @@ public class restaurant {
                 Order o = orders.get(orderNum);
 
                 if (ans==1){
+                    
                     String[]  statuses = o.getPossibleStatuses();
                     System.out.println(orders.get(orderNum));
 
@@ -144,11 +138,39 @@ public class restaurant {
 
                 }
 
+                if(ans ==3){
+                    ArrayList<ArrayList <Food>> dishes2 = new ArrayList<>();
+                    for(Food dish: dishes){
+                        o.removeDish(dish);
+
+                    }
+                    dishes2.remove(dishes);
+                    System.out.println(dishes2);
+
+
+
+
+                }
+                if(ans==4){
+                    
+                    orders.remove(o);
+                }
+
+
+                
+
                 
 
             }
 
         }
+    }
+
+    public static void makeMenu(){
+        menu.add(new Food("Hamburger", 10));
+        menu.add(new Food("Ribeye Steak", 25));
+        menu.add(new Food("Tacos", 11));
+        menu.add(new Food("Drink", 3));
     }
 
     public static ArrayList<Food> getDishes(){
@@ -194,6 +216,11 @@ public class restaurant {
         }
     }
 
+
+ 
+
+
+
     public static void listOrders(int n){
         if (n==1){ //print orders by order number
             for(Order o: orders){
@@ -216,9 +243,22 @@ public class restaurant {
             }
 
         }
-        //if(n==3){//print orders by status
-            //for(int i = 0; i)
+        if(n==3){//print orders by status
+            HashSet<String> statuses = new HashSet<>();
+            for(Order o: orders){
+                statuses.add(o.getStatus());
+
+            }
+
+            for(String status: statuses){
+                for(Order o: orders){
+                    if(o.getStatus().equals(status)){
+                        System.out.println(o);
+                    }
+                }
+            }
         
     }
     
+}
 }
